@@ -10,6 +10,7 @@ body {
 
 .container {
     margin-top: 20px;
+    text-align: center; /* 中央寄せ */
 }
 
 table {
@@ -31,11 +32,31 @@ th:first-child {
     width: 50px;
 }
 
+
 td:last-child {
     max-width: 400px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+@media (max-width: 300pt) {
+    body {
+        font-size: 10px; /* 小さめのフォントサイズ */
+    }    
+    th, td:nth-child(3) {
+        display: none;
+    }
+    button{
+        font-size: 10px;
+    }
+    
+    td:nth-child(2) {
+        max-width: calc(100% - 50px); /* 幅を1列目を除く残りの幅に調整 */
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+    }
 }
 
 button {

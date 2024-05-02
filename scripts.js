@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 const copyButton = document.createElement('button');
                 copyButton.innerText = 'Copy';
                 copyButton.onclick = function() {
-                    navigator.clipboard.writeText(item.content);
+                    navigator.clipboard.writeText(item.content.replace(/<br>/g, '\n'));
                 };
                 copyButtonCell.appendChild(copyButton);
                 row.appendChild(copyButtonCell);
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 row.appendChild(nameCell);
 
                 const contentCell = document.createElement('td');
-                contentCell.textContent = item.content;
+                contentCell.innerHTML = item.content;
                 row.appendChild(contentCell);
 
                 tableBody.appendChild(row);
