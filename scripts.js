@@ -24,8 +24,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     copyButton.onclick = function() {
                         navigator.clipboard.writeText(item.content.replace(/<br>/g, '\n'));
                     };
+                    copyButtonCell.appendChild(copyButton);
                 }
-                copyButtonCell.appendChild(copyButton);
                 row.appendChild(copyButtonCell);
 
                 const nameCell = document.createElement('td');
