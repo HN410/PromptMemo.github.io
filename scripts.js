@@ -8,11 +8,23 @@ document.addEventListener("DOMContentLoaded", function() {
                 const row = document.createElement('tr');
 
                 const copyButtonCell = document.createElement('td');
-                const copyButton = document.createElement('button');
-                copyButton.innerText = 'Copy';
-                copyButton.onclick = function() {
-                    navigator.clipboard.writeText(item.content.replace(/<br>/g, '\n'));
-                };
+                if (Array.isArray(item.content)) { // contentの内容がリストのとき
+                    item.content.forEach((content, index) => {
+                        const copyButton = document.createElement('button');
+                        copyButton.innerText = 'Copy ' + (index + 1);
+                        copyButton.onclick = function() {
+                            navigator.clipboard.writeText(content.replace(/<br>/g, '\n'));
+                        };
+                        copyButtonCell.appendChild(copyButton);
+                    });
+                }else {
+                    // contentの内容がリストじゃないとき
+                    const copyButton = document.createElement('button');
+                    copyButton.innerText = 'Copy';
+                    copyButton.onclick = function() {
+                        navigator.clipboard.writeText(item.content.replace(/<br>/g, '\n'));
+                    };
+                }
                 copyButtonCell.appendChild(copyButton);
                 row.appendChild(copyButtonCell);
 
