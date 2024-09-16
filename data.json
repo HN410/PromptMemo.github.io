@@ -15,6 +15,10 @@
         "While maintaining proper style, please revise the relevant parts of the document so that the meaning is the same as the Japanese meaning below.\n Japanese: \"\"\n Sentence before modification: \"\"",
         " Japanese: \"\"\n Sentence before modification: \"\""
     ]},
+    {"name": "論文Review", "content": [
+        "Role: Professional Reviewer of Academic Papers\nConference: The International Conference on Learning Representations (ICLR)\nRevision Degree: Medium\nTask: Read a part of the paper and present specific points that need to be revised and your proposed revisions. Pay particular attention to errors in grammar and usage, and unnaturalness in the development of logic, and point these out.\nStyle: Bulleted list\nReview the following paper: \"\"",
+        "Review the following paper: \"\""
+    ]},
     {"name": "Notation Table", "content": "PDF論文内のすべての数学記号を漏れなくまとめた、Notation Table(記号一覧表)を日本語で作成してください。加算の+など，一般的によく使われる算術記号は省いてください．以下３つの見出しで表を校正してください．\n記号: 論文中に出現する数学記号そのもの（markdown形式）\n説明: その記号の簡単な説明（日本語）\n数学的定義: ある場合は、記号の厳密な数学的定義\n\n記号は種類(ギリシャ文字、アルファベット，算術記号など)で分類し、マークダウン形式で出力します。\n\n"},
     {"name": "coding", "content": "以下のような仕様を満たすコードを書いてください．必要に応じてファイルを分割してください．\n言語：\n\n仕様：\n- "}
 ]

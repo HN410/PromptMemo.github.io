@@ -14,6 +14,11 @@ document.addEventListener("DOMContentLoaded", function() {
                         copyButton.innerText = 'Copy ' + (index + 1);
                         copyButton.onclick = function() {
                             navigator.clipboard.writeText(content.replace(/<br>/g, '\n'));
+                            // Copied!と表示
+                            copyButton.innerText = 'Copied!';
+                            setTimeout(() => {
+                                copyButton.innerText = 'Copy ' + (index + 1);
+                            }, 1000);
                         };
                         copyButtonCell.appendChild(copyButton);
                     });
@@ -23,6 +28,12 @@ document.addEventListener("DOMContentLoaded", function() {
                     copyButton.innerText = 'Copy';
                     copyButton.onclick = function() {
                         navigator.clipboard.writeText(item.content.replace(/<br>/g, '\n'));
+                        // Copied!と表示
+                        copyButton.innerText = 'Copied!';
+                        setTimeout(() => {
+                            copyButton.innerText = 'Copy';
+                        }, 1000);
+
                     };
                     copyButtonCell.appendChild(copyButton);
                 }
