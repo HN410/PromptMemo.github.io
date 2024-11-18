@@ -14,10 +14,11 @@ document.addEventListener("DOMContentLoaded", function() {
                         copyButton.innerText = 'Copy ' + (index + 1);
                         copyButton.onclick = function() {
                             navigator.clipboard.writeText(content.replace(/<br>/g, '\n'));
-                            // Copied!と表示
-                            copyButton.innerText = 'Copied!';
+                            // 一時的にボタンの色を変える
+                            copyButton.style.backgroundColor = "pink";
+                            // しばらくすると元に戻す
                             setTimeout(() => {
-                                copyButton.innerText = 'Copy ' + (index + 1);
+                                copyButton.style.backgroundColor = '';
                             }, 1000);
                         };
                         copyButtonCell.appendChild(copyButton);
@@ -28,10 +29,11 @@ document.addEventListener("DOMContentLoaded", function() {
                     copyButton.innerText = 'Copy';
                     copyButton.onclick = function() {
                         navigator.clipboard.writeText(item.content.replace(/<br>/g, '\n'));
-                        // Copied!と表示
-                        copyButton.innerText = 'Copied!';
+                        // 一時的にボタンの色を変える
+                        copyButton.style.backgroundColor = "pink";
+                        // しばらくすると元に戻す
                         setTimeout(() => {
-                            copyButton.innerText = 'Copy';
+                            copyButton.style.backgroundColor = '';
                         }, 1000);
 
                     };
